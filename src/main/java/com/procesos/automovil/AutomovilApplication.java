@@ -1,0 +1,13 @@
+package com.procesos.automovil;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AutomovilApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AutomovilApplication.class, args);
+	}
+
+}

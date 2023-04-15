@@ -10,18 +10,18 @@ public class Automovil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "cars")
+    @Column(name = "Cars")
     private String cars;
-    @Column(name = "car_model")
+    @Column(name = "MODEL")
     private String car_model;
-    @Column(name = "car_color")
+    @Column(name = "COLOR")
     private String car_color;
-    @Column(name = "car_model_year")
+    @Column(name = "YEAR")
     private String car_model_year;
-    @Column(name = "car_vin")
+    @Column(name = "VIN")
     private String car_vin;
-    @Column(name = "price")
+    @Column(name = "PRICE")
     private String price;
-    @Column(name = "availability")
+    @Column(name = "AVAILABILITY")
     private String availability;
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AutomovilService {
     Automovil getAutomovil(Long id);
-    Boolean createAutomovil(Automovil automovil);
+    Boolean createAutomovil();
     List<Automovil> allAutomovil();
-    Boolean updateAutomovil(Long id, Automovil automovil);
+    Boolean updateAutomovil(Long id, Automovil car);
 }

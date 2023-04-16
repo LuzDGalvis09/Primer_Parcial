@@ -11,17 +11,17 @@ public class Automovil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "Cars")
-    private String cars;
+    private String car;
     @Column(name = "MODEL")
     private String car_model;
     @Column(name = "COLOR")
     private String car_color;
     @Column(name = "YEAR")
-    private String car_model_year;
+    private int car_model_year;
     @Column(name = "VIN")
     private String car_vin;
     @Column(name = "PRICE")
     private String price;
     @Column(name = "AVAILABILITY")
-    private String availability;
+    private boolean availability;
 }

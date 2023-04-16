@@ -28,9 +28,9 @@ public class AutomovilController {
         }
     }
     @PostMapping(value = "/cars")
-    public ResponseEntity saveAutomovil(@RequestBody Automovil automovil){
+    public ResponseEntity saveAutomovil(){
         Map response = new HashMap();
-        Boolean userResp = automovilServiceImp.createAutomovil(automovil);
+        Boolean userResp = automovilServiceImp.createAutomovil();
 
         if(userResp == true){
             response.put("status", "201");

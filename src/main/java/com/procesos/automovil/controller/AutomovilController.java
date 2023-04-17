@@ -17,7 +17,7 @@ public class AutomovilController {
     private AutomovilServiceImp automovilServiceImp;
 
     @GetMapping(value = "/cars/{id}")
-    public ResponseEntity findAutomovilById(@PathVariable Long id){
+    public ResponseEntity findAutomovilById(@PathVariable Long id ){
         Map response = new HashMap();
         try {
             return new ResponseEntity(automovilServiceImp.getAutomovil(id), HttpStatus.OK);
@@ -52,6 +52,30 @@ public class AutomovilController {
             return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping(value = "/carss")
+    public ResponseEntity AllAutomovil(){
+        Map response = new HashMap();
+        try {
+            return new ResponseEntity(automovilServiceImp.allAutomovils(), HttpStatus.OK);
+        }catch(Exception e){
+            response.put("status","404");
+            response.put("message","No se encontraron los vehiculos!");
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping(value = "/carss/{id}")
+    public ResponseEntity AutomovilById(@PathVariable Long id ){
+        Map response = new HashMap();
+        try {
+            return new ResponseEntity(automovilServiceImp.getAutomovils(id), HttpStatus.OK);
+        }catch(Exception e){
+            response.put("status","404");
+            response.put("message","No se encontro el vehiculo!");
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PutMapping(value = "/cars/{id}")
 
     public ResponseEntity updateAutomovil(@PathVariable Long id, @RequestBody Automovil automovil){

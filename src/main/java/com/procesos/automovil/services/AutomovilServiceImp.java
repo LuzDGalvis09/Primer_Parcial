@@ -26,7 +26,7 @@ public class AutomovilServiceImp implements AutomovilService {
 
     @Override
     public Automovil getAutomovil(Long id){
-        String url="https://643c4fb8f0ec48ce9042039a.mockapi.io/cars/";
+        String url="https://643c82256afd66da6adfbe5f.mockapi.io/cars/";
         Automovil response= restTemplate.getForObject(url+id, Automovil.class);
         return response;
     }
@@ -35,7 +35,7 @@ public class AutomovilServiceImp implements AutomovilService {
     public Boolean createAutomovil() {
 
         try {
-            String url="https://643c4fb8f0ec48ce9042039a.mockapi.io/cars/";
+            String url="https://643c82256afd66da6adfbe5f.mockapi.io/cars/";
             Automovil[] response= restTemplate.getForObject(url, Automovil[].class);
             AutomovilRepository.saveAll(Arrays.asList(response));
             return true;
@@ -46,10 +46,24 @@ public class AutomovilServiceImp implements AutomovilService {
 
     @Override
     public List<Automovil> allAutomovil() {
-        String url="https://643c4fb8f0ec48ce9042039a.mockapi.io/cars/";
+            String url="https://643c82256afd66da6adfbe5f.mockapi.io/cars/";
         Automovil[] response= restTemplate.getForObject(url, Automovil[].class);
         return Arrays.asList(response);
+
     }
+    @Override
+    public List<Automovil> allAutomovils() {
+
+        return AutomovilRepository.findAll();
+
+    }
+
+    @Override
+    public Automovil getAutomovils(Long id){
+        return AutomovilRepository.findById(id).get();
+    }
+
+
 
 
 
